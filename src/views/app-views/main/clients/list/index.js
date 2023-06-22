@@ -34,7 +34,6 @@ const UserList = () => {
             <div className="ml-2">
               <div>
                 <div
-                  onClick={() => setSelectedUser(record)}
                   className="avatar-status-name"
                   style={{ cursor: 'pointer' }}
                 >
@@ -103,6 +102,8 @@ const UserList = () => {
       <div className="table-responsive">
         <Table
           columns={tableColumns}
+          onRow={(record) => ({ onClick: () => setSelectedUser(record) })}
+          rowClassName="cursor-pointer"
           dataSource={users}
           loading={loading}
           rowKey="id"
