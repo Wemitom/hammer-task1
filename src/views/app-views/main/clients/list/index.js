@@ -35,7 +35,8 @@ const UserList = () => {
               <div>
                 <div
                   onClick={() => setSelectedUser(record)}
-                  className="avatar-status-name clickable"
+                  className="avatar-status-name"
+                  style={{ cursor: 'pointer' }}
                 >
                   {record.name}
                 </div>
