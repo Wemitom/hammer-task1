@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Card, Table } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const UserList = () => {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -92,6 +94,8 @@ const UserList = () => {
       },
     },
   ];
+
+  if (selectedUser) navigate('/app/main/clients/edit', { state: selectedUser });
 
   return (
     <Card bodyStyle={{ padding: '0px' }}>

@@ -33,12 +33,7 @@ export const protectedRoutes = [
   },
   {
     key: 'dashboard.main.clients',
-    path: `${APP_PREFIX_PATH}/main/clients`,
+    path: `${APP_PREFIX_PATH}/main/clients/*`,
     component: React.lazy(() => import('views/app-views/main/clients')),
-  },
-  {
-    key: 'dashboard.main.clients.list',
-    path: `${APP_PREFIX_PATH}/main/clients/list`,
-    component: React.lazy(() => import('views/app-views/main/clients/list')),
   },
 ];
